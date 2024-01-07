@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  metaexchange:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=test
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/shared/Certificates/aspnetappdocker.pfx
+    ports:
+      - "15000:443"
+    volumes:
+      - C:\Shared:/app/shared
